@@ -14,9 +14,6 @@ namespace StudentsDiary
         {
             InitializeComponent();
 
-            var students = DeserializeFromFile();
-            dgvDiary.DataSource = students;
-
         }
 
         public void SerializeToFile(List<Student> students)
@@ -64,7 +61,8 @@ namespace StudentsDiary
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            var students = DeserializeFromFile();
+            dgvDiary.DataSource = students;
         }
     }
 }
