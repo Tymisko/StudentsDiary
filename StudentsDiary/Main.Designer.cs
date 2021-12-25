@@ -104,7 +104,6 @@ namespace StudentsDiary
             this.Controls.Add(this.btnAdd);
             this.Name = "Main";
             this.Text = "Main";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dgvDiary)).EndInit();
             this.ResumeLayout(false);
         }

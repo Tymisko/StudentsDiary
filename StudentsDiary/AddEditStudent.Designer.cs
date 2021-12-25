@@ -190,6 +190,7 @@ namespace StudentsDiary
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Anuluj";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // labComments
             // 
@@ -207,6 +208,7 @@ namespace StudentsDiary
             this.btnAccept.TabIndex = 4;
             this.btnAccept.Text = "Zatwierdź";
             this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.Click += new System.EventHandler(this.BtnAccept_Click);
             // 
             // AddEditStudent
             // 
@@ -237,6 +239,7 @@ namespace StudentsDiary
             this.Text = "AddEditStudent";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button btnCancel;
