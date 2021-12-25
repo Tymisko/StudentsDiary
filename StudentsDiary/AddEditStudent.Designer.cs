@@ -45,8 +45,12 @@ namespace StudentsDiary
             this.labPhysics = new System.Windows.Forms.Label();
             this.tbPolishLang = new System.Windows.Forms.TextBox();
             this.labPolishLang = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.labForeign = new System.Windows.Forms.Label();
+            this.tbForeignLang = new System.Windows.Forms.TextBox();
+            this.labForeignLang = new System.Windows.Forms.Label();
+            this.rtbComments = new System.Windows.Forms.RichTextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.labComments = new System.Windows.Forms.Label();
+            this.btnAccept = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbId
@@ -155,27 +159,65 @@ namespace StudentsDiary
             this.labPolishLang.TabIndex = 1;
             this.labPolishLang.Text = "Jęz. pol.";
             // 
-            // textBox8
+            // tbForeignLang
             // 
-            this.textBox8.Location = new System.Drawing.Point(107, 194);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(225, 20);
-            this.textBox8.TabIndex = 0;
+            this.tbForeignLang.Location = new System.Drawing.Point(107, 194);
+            this.tbForeignLang.Name = "tbForeignLang";
+            this.tbForeignLang.Size = new System.Drawing.Size(225, 20);
+            this.tbForeignLang.TabIndex = 0;
             // 
-            // labForeign
+            // labForeignLang
             // 
-            this.labForeign.Location = new System.Drawing.Point(30, 194);
-            this.labForeign.Name = "labForeign";
-            this.labForeign.Size = new System.Drawing.Size(71, 20);
-            this.labForeign.TabIndex = 1;
-            this.labForeign.Text = "Jęz. obc.:";
+            this.labForeignLang.Location = new System.Drawing.Point(30, 194);
+            this.labForeignLang.Name = "labForeignLang";
+            this.labForeignLang.Size = new System.Drawing.Size(71, 20);
+            this.labForeignLang.TabIndex = 1;
+            this.labForeignLang.Text = "Jęz. obc.:";
+            // 
+            // rtbComments
+            // 
+            this.rtbComments.Location = new System.Drawing.Point(108, 220);
+            this.rtbComments.Name = "rtbComments";
+            this.rtbComments.Size = new System.Drawing.Size(224, 145);
+            this.rtbComments.TabIndex = 2;
+            this.rtbComments.Text = "";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(108, 385);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 28);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Anuluj";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // labComments
+            // 
+            this.labComments.Location = new System.Drawing.Point(30, 223);
+            this.labComments.Name = "labComments";
+            this.labComments.Size = new System.Drawing.Size(71, 20);
+            this.labComments.TabIndex = 3;
+            this.labComments.Text = "Uwagi: ";
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Location = new System.Drawing.Point(234, 385);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(98, 28);
+            this.btnAccept.TabIndex = 4;
+            this.btnAccept.Text = "Zatwierdź";
+            this.btnAccept.UseVisualStyleBackColor = true;
             // 
             // AddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 450);
-            this.Controls.Add(this.labForeign);
+            this.ClientSize = new System.Drawing.Size(361, 450);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAccept);
+            this.Controls.Add(this.labComments);
+            this.Controls.Add(this.rtbComments);
+            this.Controls.Add(this.labForeignLang);
             this.Controls.Add(this.labPolishLang);
             this.Controls.Add(this.labPhysics);
             this.Controls.Add(this.labTechnology);
@@ -183,7 +225,7 @@ namespace StudentsDiary
             this.Controls.Add(this.labLastName);
             this.Controls.Add(this.labFirstName);
             this.Controls.Add(this.labId);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.tbForeignLang);
             this.Controls.Add(this.tbPolishLang);
             this.Controls.Add(this.tbPhysics);
             this.Controls.Add(this.tbTechnology);
@@ -197,24 +239,45 @@ namespace StudentsDiary
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.Button btnCancel;
+
+        private System.Windows.Forms.Button btnAccept;
+
+        private System.Windows.Forms.Label labComments;
+
+        private System.Windows.Forms.Label labForeignLang;
+
+        private System.Windows.Forms.Label labPolishLang;
+
+        private System.Windows.Forms.Label labPhysics;
+
+        private System.Windows.Forms.Label labTechnology;
+
+        private System.Windows.Forms.Label labMath;
+
+        private System.Windows.Forms.Label labLastName;
+
+        private System.Windows.Forms.Label labFirstName;
+
+        private System.Windows.Forms.RichTextBox rtbComments;
+
+        private System.Windows.Forms.TextBox tbForeignLang;
+
+        private System.Windows.Forms.TextBox tbPolishLang;
+
+        private System.Windows.Forms.TextBox tbPhysics;
+
+        private System.Windows.Forms.TextBox tbTechnology;
+
+        private System.Windows.Forms.TextBox tbLastName;
+
+        private System.Windows.Forms.TextBox tbFirstName;
+
+        private System.Windows.Forms.TextBox tbMath;
+
         private System.Windows.Forms.Label labId;
 
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox tbId;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label8;
 
         #endregion
     }

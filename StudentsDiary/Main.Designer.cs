@@ -1,7 +1,7 @@
 ﻿
 namespace StudentsDiary
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@ namespace StudentsDiary
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnEdit
             // 
@@ -57,7 +57,7 @@ namespace StudentsDiary
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edytuj";
             this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnDelete
             // 
@@ -68,7 +68,7 @@ namespace StudentsDiary
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnRefresh
             // 
@@ -79,7 +79,7 @@ namespace StudentsDiary
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Odśwież";
             this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // dgvDiary
             // 
@@ -91,7 +91,7 @@ namespace StudentsDiary
             this.dgvDiary.Size = new System.Drawing.Size(558, 446);
             this.dgvDiary.TabIndex = 4;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,16 +102,14 @@ namespace StudentsDiary
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Main";
+            this.Text = "Main";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dgvDiary)).EndInit();
             this.ResumeLayout(false);
         }
 
         private System.Windows.Forms.DataGridView dgvDiary;
-
-        private System.Windows.Forms.DataGridView dataGridView1;
 
         private System.Windows.Forms.Button btnRefresh;
 
@@ -120,12 +118,6 @@ namespace StudentsDiary
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-
         #endregion
     }
 }
-
