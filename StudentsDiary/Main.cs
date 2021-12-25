@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
@@ -51,12 +52,40 @@ namespace StudentsDiary
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (dgvDiary.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Proszę zaznacz ucznia, którego dane chcesz edytować", "Błąd", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return; 
+            }
+
+            var addEditStudent = new AddEditStudent(Convert.ToInt32(dgvDiary.SelectedRows[0].Cells[0].Value));
+            addEditStudent.ShowDialog();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (dgvDiary.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Proszę zaznacz ucznia, którego chcesz usunąć", "Błąd", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            var selectedStudent = dgvDiary.SelectedRows[0];
+
+            var confirmDelete = MessageBox.Show(
+                $"Czy na pewno chccesz usunąć ucznia {selectedStudent.Cells[1].Value} {selectedStudent.Cells[2].Value}?",
+                "Usuwanie ucznia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (confirmDelete == DialogResult.OK)
+            {
+                var students = DeserializeFromFile();
+                students.RemoveAll(s => s.Id == Convert.ToInt32(selectedStudent.Cells[0].Value));
+
+                SerializeToFile(students);
+                dgvDiary.DataSource = students;
+            }
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
