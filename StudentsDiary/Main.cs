@@ -15,6 +15,16 @@ namespace StudentsDiary
         {
             InitializeComponent();
 
+            dgvDiary.Columns[0].HeaderText = "Numer";
+            dgvDiary.Columns[1].HeaderText = "Imie";
+            dgvDiary.Columns[2].HeaderText = "Nazwisko";
+            dgvDiary.Columns[3].HeaderText = "Uwagi";
+            dgvDiary.Columns[4].HeaderText = "Matematyka";
+            dgvDiary.Columns[5].HeaderText = "Technologia";
+            dgvDiary.Columns[6].HeaderText = "Fizyka";
+            dgvDiary.Columns[7].HeaderText = "Język Polski";
+            dgvDiary.Columns[8].HeaderText = "Język Obcy";
+
         }
 
         public void SerializeToFile(List<Student> students)
