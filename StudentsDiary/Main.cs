@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Xml.Serialization;
 
 namespace StudentsDiary
 {
     public partial class Main : Form
     {
-        private string _filePath = Path.Combine(Environment.CurrentDirectory, "students.txt");
+        private FileHelper<List<Student>> _fileHelper = 
+            new FileHelper<List<Student>>(Program.FilePath);
         public Main()
         {
             InitializeComponent();
@@ -20,7 +17,7 @@ namespace StudentsDiary
 
         private void RefreshDiary()
         {
-            var students = DeserializeFromFile();
+            var students = _fileHelper.DeserializeFromFile();
             dgvDiary.DataSource = students;
         }
 
@@ -35,33 +32,6 @@ namespace StudentsDiary
             dgvDiary.Columns[6].HeaderText = "Fizyka";
             dgvDiary.Columns[7].HeaderText = "Język polski";
             dgvDiary.Columns[7].HeaderText = "Język obcy";
-        }
-
-        public void SerializeToFile(List<Student> students)
-        {
-            var serializer = new XmlSerializer(typeof(List<Student>));
-            using (var streamWriter = new StreamWriter(_filePath))
-            {
-                serializer.Serialize(streamWriter, students);
-                streamWriter.Close();
-            }
-        }
-
-        public List<Student> DeserializeFromFile()
-        {
-            if (!File.Exists(_filePath))
-            {
-                return new List<Student>();
-            }
-
-            var serializer = new XmlSerializer(typeof(List<Student>));
-
-            using (var streamReader = new StreamReader(_filePath))
-            {
-                var students = (List<Student>) serializer.Deserialize(streamReader);
-                streamReader.Close();
-                return students;
-            }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -100,10 +70,10 @@ namespace StudentsDiary
 
             if (confirmDelete == DialogResult.OK)
             {
-                var students = DeserializeFromFile();
+                var students = _fileHelper.DeserializeFromFile();
                 students.RemoveAll(s => s.Id == Convert.ToInt32(selectedStudent.Cells[0].Value));
 
-                SerializeToFile(students);
+                _fileHelper.SerializeToFile(students);
                 dgvDiary.DataSource = students;
             }
         }

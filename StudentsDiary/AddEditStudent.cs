@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 
 namespace StudentsDiary
 {
     public partial class AddEditStudent : Form
     {
-        private string _filePath = Path.Combine(Environment.CurrentDirectory, "students.txt");
+        private FileHelper<List<Student>> _fileHelper =
+            new FileHelper<List<Student>>(Program.FilePath);
         private int _studentId;
 
         public AddEditStudent(int id = 0)
@@ -19,9 +18,7 @@ namespace StudentsDiary
 
             if (id != 0)
             {
-                var students = DeserializeFromFile();
-                // var student = students.FirstOrDefault(s => s.Id == id);
-
+                var students = _fileHelper.DeserializeFromFile();
                 var student = students.FirstOrDefault(s => s.Id == id);
 
                 if (student == null)
@@ -42,36 +39,9 @@ namespace StudentsDiary
             tbFirstName.Select();
         }
 
-        public void SerializeToFile(List<Student> students)
-        {
-            var serializer = new XmlSerializer(typeof(List<Student>));
-            using (var streamWriter = new StreamWriter(_filePath))
-            {
-                serializer.Serialize(streamWriter, students);
-                streamWriter.Close();
-            }
-        }
-
-        public List<Student> DeserializeFromFile()
-        {
-            if (!File.Exists(_filePath))
-            {
-                return new List<Student>();
-            }
-
-            var serializer = new XmlSerializer(typeof(List<Student>));
-
-            using (var streamReader = new StreamReader(_filePath))
-            {
-                var students = (List<Student>)serializer.Deserialize(streamReader);
-                streamReader.Close();
-                return students;
-            }
-        }
-
         private void BtnAccept_Click(object sender, EventArgs e)
         {
-            var students = DeserializeFromFile();
+            var students = _fileHelper.DeserializeFromFile();
 
             if (_studentId != 0)
             {
@@ -100,7 +70,7 @@ namespace StudentsDiary
 
             students.Add(student);
 
-            SerializeToFile(students);
+            _fileHelper.SerializeToFile(students);
 
             Close();
         }
