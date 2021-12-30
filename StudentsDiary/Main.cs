@@ -70,12 +70,16 @@ namespace StudentsDiary
 
             if (confirmDelete == DialogResult.OK)
             {
-                var students = _fileHelper.DeserializeFromFile();
-                students.RemoveAll(s => s.Id == Convert.ToInt32(selectedStudent.Cells[0].Value));
-
-                _fileHelper.SerializeToFile(students);
-                dgvDiary.DataSource = students;
+                DeleteStudent(Convert.ToInt32(selectedStudent.Cells[0].Value));
+                RefreshDiary();
             }
+        }
+
+        private void DeleteStudent(int id)
+        {
+            var students = _fileHelper.DeserializeFromFile();
+            students.RemoveAll(s => s.Id == id);
+            _fileHelper.SerializeToFile(students);
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
