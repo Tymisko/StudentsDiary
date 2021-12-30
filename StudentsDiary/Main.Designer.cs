@@ -34,7 +34,7 @@ namespace StudentsDiary
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvDiary = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize) (this.dgvDiary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -83,20 +83,24 @@ namespace StudentsDiary
             // 
             // dgvDiary
             // 
-            this.dgvDiary.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDiary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDiary.BackgroundColor = System.Drawing.Color.White;
             this.dgvDiary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiary.Location = new System.Drawing.Point(13, 46);
             this.dgvDiary.Name = "dgvDiary";
-            this.dgvDiary.Size = new System.Drawing.Size(558, 446);
+            this.dgvDiary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDiary.Size = new System.Drawing.Size(959, 446);
             this.dgvDiary.TabIndex = 4;
+            this.dgvDiary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiary_CellContentClick);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(583, 504);
+            this.ClientSize = new System.Drawing.Size(984, 504);
             this.Controls.Add(this.dgvDiary);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDelete);
@@ -104,8 +108,9 @@ namespace StudentsDiary
             this.Controls.Add(this.btnAdd);
             this.Name = "Main";
             this.Text = "Main";
-            ((System.ComponentModel.ISupportInitialize) (this.dgvDiary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.DataGridView dgvDiary;

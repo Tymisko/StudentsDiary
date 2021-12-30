@@ -184,7 +184,7 @@ namespace StudentsDiary
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(108, 385);
+            this.btnCancel.Location = new System.Drawing.Point(234, 397);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 28);
             this.btnCancel.TabIndex = 5;
@@ -202,7 +202,7 @@ namespace StudentsDiary
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(234, 385);
+            this.btnAccept.Location = new System.Drawing.Point(108, 397);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(98, 28);
             this.btnAccept.TabIndex = 4;

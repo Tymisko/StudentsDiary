@@ -14,7 +14,6 @@ namespace StudentsDiary
         public Main()
         {
             InitializeComponent();
-
         }
 
         public void SerializeToFile(List<Student> students)
@@ -92,6 +91,11 @@ namespace StudentsDiary
         {
             var students = DeserializeFromFile();
             dgvDiary.DataSource = students;
+        }
+
+        private void dgvDiary_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
