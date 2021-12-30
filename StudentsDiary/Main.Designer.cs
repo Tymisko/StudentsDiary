@@ -91,7 +91,11 @@ namespace StudentsDiary
             this.dgvDiary.Location = new System.Drawing.Point(13, 46);
             this.dgvDiary.Name = "dgvDiary";
             this.dgvDiary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+<<<<<<< HEAD
             this.dgvDiary.Size = new System.Drawing.Size(959, 446);
+=======
+            this.dgvDiary.Size = new System.Drawing.Size(1320, 446);
+>>>>>>> 6b9e1af53b1e0d8c2be59d46cc8a71ae2cfbef9f
             this.dgvDiary.TabIndex = 4;
             this.dgvDiary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiary_CellContentClick);
             // 
@@ -100,7 +104,11 @@ namespace StudentsDiary
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(984, 504);
+=======
+            this.ClientSize = new System.Drawing.Size(1345, 504);
+>>>>>>> 6b9e1af53b1e0d8c2be59d46cc8a71ae2cfbef9f
             this.Controls.Add(this.dgvDiary);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDelete);
