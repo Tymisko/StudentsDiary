@@ -236,7 +236,7 @@ namespace StudentsDiary
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.tbId);
             this.Name = "AddEditStudent";
-            this.Text = "AddEditStudent";
+            this.Text = "Dodawanie Ucznia";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -27,7 +27,7 @@ namespace StudentsDiary
                 if (student == null)
                     throw new Exception("Brak użytkownika o podanym Id");
 
-
+                Text = "Edytowanie danych ucznia";
                 tbId.Text = student.Id.ToString();
                 tbFirstName.Text = student.FirstName;
                 tbLastName.Text = student.LastName;
