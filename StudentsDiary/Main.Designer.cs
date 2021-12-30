@@ -91,6 +91,7 @@ namespace StudentsDiary
             this.dgvDiary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiary.Location = new System.Drawing.Point(12, 46);
             this.dgvDiary.Name = "dgvDiary";
+            this.dgvDiary.RowHeadersVisible = false;
             this.dgvDiary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiary.Size = new System.Drawing.Size(960, 446);
             this.dgvDiary.TabIndex = 4;
