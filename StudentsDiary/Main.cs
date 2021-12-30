@@ -14,10 +14,18 @@ namespace StudentsDiary
         public Main()
         {
             InitializeComponent();
+            RefreshDiary();
+            SetColumnsHeader();            
+        }
 
+        private void RefreshDiary()
+        {
             var students = DeserializeFromFile();
             dgvDiary.DataSource = students;
+        }
 
+        private void SetColumnsHeader()
+        {
             dgvDiary.Columns[0].HeaderText = "Numer";
             dgvDiary.Columns[1].HeaderText = "Imie";
             dgvDiary.Columns[2].HeaderText = "Nazwisko";
@@ -102,13 +110,7 @@ namespace StudentsDiary
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            var students = DeserializeFromFile();
-            dgvDiary.DataSource = students;
-        }
-
-        private void dgvDiary_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            RefreshDiary();
         }
     }
 }

@@ -94,7 +94,6 @@ namespace StudentsDiary
             this.dgvDiary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiary.Size = new System.Drawing.Size(960, 446);
             this.dgvDiary.TabIndex = 4;
-            this.dgvDiary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiary_CellContentClick);
             // 
             // Main
             // 
