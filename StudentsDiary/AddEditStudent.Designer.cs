@@ -235,7 +235,10 @@ namespace StudentsDiary
             this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.tbId);
+            this.MaximumSize = new System.Drawing.Size(377, 489);
+            this.MinimumSize = new System.Drawing.Size(377, 489);
             this.Name = "AddEditStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodawanie Ucznia";
             this.ResumeLayout(false);
             this.PerformLayout();
