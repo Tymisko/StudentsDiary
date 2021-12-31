@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentsDiary.Properties;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -8,11 +9,28 @@ namespace StudentsDiary
     {
         private FileHelper<List<Student>> _fileHelper = 
             new FileHelper<List<Student>>(Program.FilePath);
+
+        public bool IsMaximize 
+        { 
+            get
+            {
+                return Settings.Default.IsMaximize;
+            }
+            set
+            {
+                Settings.Default.IsMaximize = value;
+            }
+        }
+
         public Main()
         {
             InitializeComponent();
             RefreshDiary();
-            SetColumnsHeader();            
+
+            SetColumnsHeader();
+            
+            if(IsMaximize)
+                WindowState = FormWindowState.Maximized;
         }
 
         private void RefreshDiary()
@@ -31,13 +49,19 @@ namespace StudentsDiary
             dgvDiary.Columns[5].HeaderText = "Technologia";
             dgvDiary.Columns[6].HeaderText = "Fizyka";
             dgvDiary.Columns[7].HeaderText = "Język polski";
-            dgvDiary.Columns[7].HeaderText = "Język obcy";
+            dgvDiary.Columns[8].HeaderText = "Język obcy";
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             var addEditStudent = new AddEditStudent();
+            addEditStudent.FormClosed += AddEditStudent_FormClosed;
             addEditStudent.ShowDialog();
+        }
+
+        private void AddEditStudent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshDiary();
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
@@ -50,6 +74,7 @@ namespace StudentsDiary
             }
 
             var addEditStudent = new AddEditStudent(Convert.ToInt32(dgvDiary.SelectedRows[0].Cells[0].Value));
+            addEditStudent.FormClosed += AddEditStudent_FormClosed;
             addEditStudent.ShowDialog();
         }
 
@@ -85,6 +110,16 @@ namespace StudentsDiary
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             RefreshDiary();
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+                IsMaximize = true;
+            else
+                IsMaximize = false;
+
+            Settings.Default.Save();
         }
     }
 }
