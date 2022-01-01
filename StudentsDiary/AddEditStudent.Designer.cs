@@ -51,11 +51,12 @@ namespace StudentsDiary
             this.btnCancel = new System.Windows.Forms.Button();
             this.labComments = new System.Windows.Forms.Label();
             this.btnAccept = new System.Windows.Forms.Button();
+            this.chbAdditionalClasses = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tbId
             // 
-            this.tbId.Location = new System.Drawing.Point(107, 12);
+            this.tbId.Location = new System.Drawing.Point(89, 8);
             this.tbId.Name = "tbId";
             this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(225, 20);
@@ -63,7 +64,7 @@ namespace StudentsDiary
             // 
             // labId
             // 
-            this.labId.Location = new System.Drawing.Point(30, 12);
+            this.labId.Location = new System.Drawing.Point(12, 8);
             this.labId.Name = "labId";
             this.labId.Size = new System.Drawing.Size(71, 20);
             this.labId.TabIndex = 1;
@@ -71,14 +72,14 @@ namespace StudentsDiary
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(107, 38);
+            this.tbFirstName.Location = new System.Drawing.Point(89, 34);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(225, 20);
             this.tbFirstName.TabIndex = 0;
             // 
             // labFirstName
             // 
-            this.labFirstName.Location = new System.Drawing.Point(30, 38);
+            this.labFirstName.Location = new System.Drawing.Point(12, 34);
             this.labFirstName.Name = "labFirstName";
             this.labFirstName.Size = new System.Drawing.Size(71, 20);
             this.labFirstName.TabIndex = 1;
@@ -86,14 +87,14 @@ namespace StudentsDiary
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(107, 64);
+            this.tbLastName.Location = new System.Drawing.Point(89, 60);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(225, 20);
             this.tbLastName.TabIndex = 0;
             // 
             // labLastName
             // 
-            this.labLastName.Location = new System.Drawing.Point(30, 64);
+            this.labLastName.Location = new System.Drawing.Point(12, 60);
             this.labLastName.Name = "labLastName";
             this.labLastName.Size = new System.Drawing.Size(71, 20);
             this.labLastName.TabIndex = 1;
@@ -101,14 +102,14 @@ namespace StudentsDiary
             // 
             // tbMath
             // 
-            this.tbMath.Location = new System.Drawing.Point(107, 90);
+            this.tbMath.Location = new System.Drawing.Point(89, 86);
             this.tbMath.Name = "tbMath";
             this.tbMath.Size = new System.Drawing.Size(225, 20);
             this.tbMath.TabIndex = 0;
             // 
             // labMath
             // 
-            this.labMath.Location = new System.Drawing.Point(30, 90);
+            this.labMath.Location = new System.Drawing.Point(12, 86);
             this.labMath.Name = "labMath";
             this.labMath.Size = new System.Drawing.Size(71, 20);
             this.labMath.TabIndex = 1;
@@ -116,14 +117,14 @@ namespace StudentsDiary
             // 
             // tbTechnology
             // 
-            this.tbTechnology.Location = new System.Drawing.Point(107, 116);
+            this.tbTechnology.Location = new System.Drawing.Point(89, 112);
             this.tbTechnology.Name = "tbTechnology";
             this.tbTechnology.Size = new System.Drawing.Size(225, 20);
             this.tbTechnology.TabIndex = 0;
             // 
             // labTechnology
             // 
-            this.labTechnology.Location = new System.Drawing.Point(30, 116);
+            this.labTechnology.Location = new System.Drawing.Point(12, 112);
             this.labTechnology.Name = "labTechnology";
             this.labTechnology.Size = new System.Drawing.Size(71, 20);
             this.labTechnology.TabIndex = 1;
@@ -131,14 +132,14 @@ namespace StudentsDiary
             // 
             // tbPhysics
             // 
-            this.tbPhysics.Location = new System.Drawing.Point(107, 142);
+            this.tbPhysics.Location = new System.Drawing.Point(89, 138);
             this.tbPhysics.Name = "tbPhysics";
             this.tbPhysics.Size = new System.Drawing.Size(225, 20);
             this.tbPhysics.TabIndex = 0;
             // 
             // labPhysics
             // 
-            this.labPhysics.Location = new System.Drawing.Point(30, 142);
+            this.labPhysics.Location = new System.Drawing.Point(12, 138);
             this.labPhysics.Name = "labPhysics";
             this.labPhysics.Size = new System.Drawing.Size(71, 20);
             this.labPhysics.TabIndex = 1;
@@ -146,14 +147,14 @@ namespace StudentsDiary
             // 
             // tbPolishLang
             // 
-            this.tbPolishLang.Location = new System.Drawing.Point(107, 168);
+            this.tbPolishLang.Location = new System.Drawing.Point(89, 164);
             this.tbPolishLang.Name = "tbPolishLang";
             this.tbPolishLang.Size = new System.Drawing.Size(225, 20);
             this.tbPolishLang.TabIndex = 0;
             // 
             // labPolishLang
             // 
-            this.labPolishLang.Location = new System.Drawing.Point(30, 168);
+            this.labPolishLang.Location = new System.Drawing.Point(12, 164);
             this.labPolishLang.Name = "labPolishLang";
             this.labPolishLang.Size = new System.Drawing.Size(71, 20);
             this.labPolishLang.TabIndex = 1;
@@ -161,14 +162,14 @@ namespace StudentsDiary
             // 
             // tbForeignLang
             // 
-            this.tbForeignLang.Location = new System.Drawing.Point(107, 194);
+            this.tbForeignLang.Location = new System.Drawing.Point(89, 190);
             this.tbForeignLang.Name = "tbForeignLang";
             this.tbForeignLang.Size = new System.Drawing.Size(225, 20);
             this.tbForeignLang.TabIndex = 0;
             // 
             // labForeignLang
             // 
-            this.labForeignLang.Location = new System.Drawing.Point(30, 194);
+            this.labForeignLang.Location = new System.Drawing.Point(12, 190);
             this.labForeignLang.Name = "labForeignLang";
             this.labForeignLang.Size = new System.Drawing.Size(71, 20);
             this.labForeignLang.TabIndex = 1;
@@ -176,7 +177,7 @@ namespace StudentsDiary
             // 
             // rtbComments
             // 
-            this.rtbComments.Location = new System.Drawing.Point(108, 220);
+            this.rtbComments.Location = new System.Drawing.Point(90, 216);
             this.rtbComments.Name = "rtbComments";
             this.rtbComments.Size = new System.Drawing.Size(224, 145);
             this.rtbComments.TabIndex = 2;
@@ -184,7 +185,7 @@ namespace StudentsDiary
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(234, 397);
+            this.btnCancel.Location = new System.Drawing.Point(216, 420);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 28);
             this.btnCancel.TabIndex = 5;
@@ -194,7 +195,7 @@ namespace StudentsDiary
             // 
             // labComments
             // 
-            this.labComments.Location = new System.Drawing.Point(30, 223);
+            this.labComments.Location = new System.Drawing.Point(12, 219);
             this.labComments.Name = "labComments";
             this.labComments.Size = new System.Drawing.Size(71, 20);
             this.labComments.TabIndex = 3;
@@ -202,7 +203,7 @@ namespace StudentsDiary
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(108, 397);
+            this.btnAccept.Location = new System.Drawing.Point(90, 420);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(98, 28);
             this.btnAccept.TabIndex = 4;
@@ -210,11 +211,22 @@ namespace StudentsDiary
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.BtnAccept_Click);
             // 
+            // chbAdditionalClasses
+            // 
+            this.chbAdditionalClasses.AutoSize = true;
+            this.chbAdditionalClasses.Location = new System.Drawing.Point(15, 376);
+            this.chbAdditionalClasses.Name = "chbAdditionalClasses";
+            this.chbAdditionalClasses.Size = new System.Drawing.Size(213, 17);
+            this.chbAdditionalClasses.TabIndex = 6;
+            this.chbAdditionalClasses.Text = "Bierze udział w zajęciach dodatkowych";
+            this.chbAdditionalClasses.UseVisualStyleBackColor = true;
+            // 
             // AddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 450);
+            this.ClientSize = new System.Drawing.Size(325, 460);
+            this.Controls.Add(this.chbAdditionalClasses);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.labComments);
@@ -235,8 +247,8 @@ namespace StudentsDiary
             this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.tbId);
-            this.MaximumSize = new System.Drawing.Size(377, 489);
-            this.MinimumSize = new System.Drawing.Size(377, 489);
+            this.MaximumSize = new System.Drawing.Size(341, 499);
+            this.MinimumSize = new System.Drawing.Size(341, 499);
             this.Name = "AddEditStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodawanie Ucznia";
@@ -286,5 +298,7 @@ namespace StudentsDiary
         private System.Windows.Forms.TextBox tbId;
 
         #endregion
+
+        private System.Windows.Forms.CheckBox chbAdditionalClasses;
     }
 }

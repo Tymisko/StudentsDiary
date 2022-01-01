@@ -50,6 +50,7 @@ namespace StudentsDiary
             tbPolishLang.Text = _student.PolishLang;
             tbForeignLang.Text = _student.ForeignLang;
             rtbComments.Text = _student.Comments;
+            chbAdditionalClasses.Checked = _student.AdditionalClasses;
         }
 
         private void BtnAccept_Click(object sender, EventArgs e)
@@ -81,6 +82,7 @@ namespace StudentsDiary
                 PolishLang = tbPolishLang.Text,
                 ForeignLang = tbForeignLang.Text,
                 Comments = rtbComments.Text,
+                AdditionalClasses = chbAdditionalClasses.Checked,
             };
 
             students.Add(student);
