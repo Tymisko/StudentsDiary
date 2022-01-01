@@ -9,6 +9,7 @@ namespace StudentsDiary
     {
         private Student _student;
         private int _studentId;
+        private List<Group> _groups = new List<Group>();
 
         private FileHelper<List<Student>> _fileHelper =
             new FileHelper<List<Student>>(Program.FilePath);
@@ -16,11 +17,27 @@ namespace StudentsDiary
         public AddEditStudent(int id = 0)
         {
             InitializeComponent();
-            _studentId = id;
+            LoadGroupsId();
 
+            _studentId = id;
             GetStudentData();
 
             tbFirstName.Select();
+        }
+
+        private void LoadGroupsId()
+        {
+            _groups.Add(new Group(1));
+            _groups.Add(new Group(2));
+            _groups.Add(new Group(3));
+
+            var groupsId = new List<int>();
+            foreach (var group in _groups)
+            {
+                groupsId.Add(group.Id);
+            }
+
+            cbGroupId.DataSource = groupsId;
         }
 
         private void GetStudentData()
@@ -51,6 +68,7 @@ namespace StudentsDiary
             tbForeignLang.Text = _student.ForeignLang;
             rtbComments.Text = _student.Comments;
             chbAdditionalClasses.Checked = _student.AdditionalClasses;
+            cbGroupId.SelectedItem = _student.GroupId;
         }
 
         private void BtnAccept_Click(object sender, EventArgs e)
@@ -83,6 +101,7 @@ namespace StudentsDiary
                 ForeignLang = tbForeignLang.Text,
                 Comments = rtbComments.Text,
                 AdditionalClasses = chbAdditionalClasses.Checked,
+                GroupId = (int)cbGroupId.SelectedItem,
             };
 
             students.Add(student);

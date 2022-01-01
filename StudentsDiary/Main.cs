@@ -28,8 +28,8 @@ namespace StudentsDiary
             RefreshDiary();
 
             SetColumnsHeader();
-            
-            if(IsMaximize)
+
+            if (IsMaximize)
                 WindowState = FormWindowState.Maximized;
         }
 
@@ -51,6 +51,7 @@ namespace StudentsDiary
             dgvDiary.Columns[7].HeaderText = "Język polski";
             dgvDiary.Columns[8].HeaderText = "Język obcy";
             dgvDiary.Columns[9].HeaderText = "Zajęcia Dodatkowe";
+            dgvDiary.Columns[10].HeaderText = "Id Grupy";
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)

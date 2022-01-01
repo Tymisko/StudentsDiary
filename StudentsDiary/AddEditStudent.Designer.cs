@@ -52,6 +52,8 @@ namespace StudentsDiary
             this.labComments = new System.Windows.Forms.Label();
             this.btnAccept = new System.Windows.Forms.Button();
             this.chbAdditionalClasses = new System.Windows.Forms.CheckBox();
+            this.cbGroupId = new System.Windows.Forms.ComboBox();
+            this.lbGroupId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbId
@@ -185,7 +187,7 @@ namespace StudentsDiary
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(216, 420);
+            this.btnCancel.Location = new System.Drawing.Point(215, 417);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 28);
             this.btnCancel.TabIndex = 5;
@@ -203,7 +205,7 @@ namespace StudentsDiary
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(90, 420);
+            this.btnAccept.Location = new System.Drawing.Point(89, 417);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(98, 28);
             this.btnAccept.TabIndex = 4;
@@ -214,18 +216,36 @@ namespace StudentsDiary
             // chbAdditionalClasses
             // 
             this.chbAdditionalClasses.AutoSize = true;
-            this.chbAdditionalClasses.Location = new System.Drawing.Point(15, 376);
+            this.chbAdditionalClasses.Location = new System.Drawing.Point(15, 394);
             this.chbAdditionalClasses.Name = "chbAdditionalClasses";
             this.chbAdditionalClasses.Size = new System.Drawing.Size(213, 17);
             this.chbAdditionalClasses.TabIndex = 6;
             this.chbAdditionalClasses.Text = "Bierze udział w zajęciach dodatkowych";
             this.chbAdditionalClasses.UseVisualStyleBackColor = true;
             // 
+            // cbGroupId
+            // 
+            this.cbGroupId.FormattingEnabled = true;
+            this.cbGroupId.Location = new System.Drawing.Point(90, 367);
+            this.cbGroupId.Name = "cbGroupId";
+            this.cbGroupId.Size = new System.Drawing.Size(224, 21);
+            this.cbGroupId.TabIndex = 7;
+            // 
+            // lbGroupId
+            // 
+            this.lbGroupId.Location = new System.Drawing.Point(13, 368);
+            this.lbGroupId.Name = "lbGroupId";
+            this.lbGroupId.Size = new System.Drawing.Size(71, 20);
+            this.lbGroupId.TabIndex = 8;
+            this.lbGroupId.Text = "Id grupy:";
+            // 
             // AddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 460);
+            this.ClientSize = new System.Drawing.Size(325, 451);
+            this.Controls.Add(this.lbGroupId);
+            this.Controls.Add(this.cbGroupId);
             this.Controls.Add(this.chbAdditionalClasses);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
@@ -247,8 +267,8 @@ namespace StudentsDiary
             this.Controls.Add(this.tbLastName);
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.tbId);
-            this.MaximumSize = new System.Drawing.Size(341, 499);
-            this.MinimumSize = new System.Drawing.Size(341, 499);
+            this.MaximumSize = new System.Drawing.Size(341, 490);
+            this.MinimumSize = new System.Drawing.Size(341, 490);
             this.Name = "AddEditStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodawanie Ucznia";
@@ -300,5 +320,7 @@ namespace StudentsDiary
         #endregion
 
         private System.Windows.Forms.CheckBox chbAdditionalClasses;
+        private System.Windows.Forms.ComboBox cbGroupId;
+        private System.Windows.Forms.Label lbGroupId;
     }
 }
