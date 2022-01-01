@@ -34,7 +34,7 @@ namespace StudentsDiary
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvDiary = new System.Windows.Forms.DataGridView();
-            this.cbGroupFilter = new System.Windows.Forms.ComboBox();
+            this.cmbGroupFilter = new System.Windows.Forms.ComboBox();
             this.lbGroupFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).BeginInit();
             this.SuspendLayout();
@@ -98,15 +98,15 @@ namespace StudentsDiary
             this.dgvDiary.Size = new System.Drawing.Size(960, 446);
             this.dgvDiary.TabIndex = 4;
             // 
-            // cbGroupFilter
+            // cmbGroupFilter
             // 
-            this.cbGroupFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbGroupFilter.FormattingEnabled = true;
-            this.cbGroupFilter.Location = new System.Drawing.Point(816, 14);
-            this.cbGroupFilter.Name = "cbGroupFilter";
-            this.cbGroupFilter.Size = new System.Drawing.Size(156, 21);
-            this.cbGroupFilter.TabIndex = 5;
-            this.cbGroupFilter.SelectedIndexChanged += new System.EventHandler(this.cbGroupFilter_SelectedIndexChanged);
+            this.cmbGroupFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbGroupFilter.FormattingEnabled = true;
+            this.cmbGroupFilter.Location = new System.Drawing.Point(816, 14);
+            this.cmbGroupFilter.Name = "cmbGroupFilter";
+            this.cmbGroupFilter.Size = new System.Drawing.Size(156, 21);
+            this.cmbGroupFilter.TabIndex = 5;
+            this.cmbGroupFilter.SelectedIndexChanged += new System.EventHandler(this.CmbGroupFilter_SelectedIndexChanged);
             // 
             // lbGroupFilter
             // 
@@ -125,7 +125,7 @@ namespace StudentsDiary
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(984, 504);
             this.Controls.Add(this.lbGroupFilter);
-            this.Controls.Add(this.cbGroupFilter);
+            this.Controls.Add(this.cmbGroupFilter);
             this.Controls.Add(this.dgvDiary);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDelete);
@@ -151,7 +151,7 @@ namespace StudentsDiary
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbGroupFilter;
+        private System.Windows.Forms.ComboBox cmbGroupFilter;
         private System.Windows.Forms.Label lbGroupFilter;
     }
 }

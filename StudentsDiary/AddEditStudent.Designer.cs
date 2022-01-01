@@ -52,7 +52,7 @@ namespace StudentsDiary
             this.labComments = new System.Windows.Forms.Label();
             this.btnAccept = new System.Windows.Forms.Button();
             this.chbAdditionalClasses = new System.Windows.Forms.CheckBox();
-            this.cbGroupId = new System.Windows.Forms.ComboBox();
+            this.cmbGroup = new System.Windows.Forms.ComboBox();
             this.lbGroupId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -179,9 +179,9 @@ namespace StudentsDiary
             // 
             // rtbComments
             // 
-            this.rtbComments.Location = new System.Drawing.Point(90, 216);
+            this.rtbComments.Location = new System.Drawing.Point(89, 265);
             this.rtbComments.Name = "rtbComments";
-            this.rtbComments.Size = new System.Drawing.Size(224, 145);
+            this.rtbComments.Size = new System.Drawing.Size(224, 128);
             this.rtbComments.TabIndex = 2;
             this.rtbComments.Text = "";
             // 
@@ -197,7 +197,7 @@ namespace StudentsDiary
             // 
             // labComments
             // 
-            this.labComments.Location = new System.Drawing.Point(12, 219);
+            this.labComments.Location = new System.Drawing.Point(11, 268);
             this.labComments.Name = "labComments";
             this.labComments.Size = new System.Drawing.Size(71, 20);
             this.labComments.TabIndex = 3;
@@ -216,28 +216,28 @@ namespace StudentsDiary
             // chbAdditionalClasses
             // 
             this.chbAdditionalClasses.AutoSize = true;
-            this.chbAdditionalClasses.Location = new System.Drawing.Point(15, 394);
+            this.chbAdditionalClasses.Location = new System.Drawing.Point(90, 242);
             this.chbAdditionalClasses.Name = "chbAdditionalClasses";
-            this.chbAdditionalClasses.Size = new System.Drawing.Size(213, 17);
+            this.chbAdditionalClasses.Size = new System.Drawing.Size(119, 17);
             this.chbAdditionalClasses.TabIndex = 6;
-            this.chbAdditionalClasses.Text = "Bierze udział w zajęciach dodatkowych";
+            this.chbAdditionalClasses.Text = "Zajęcia Dodatkowe";
             this.chbAdditionalClasses.UseVisualStyleBackColor = true;
             // 
-            // cbGroupId
+            // cmbGroup
             // 
-            this.cbGroupId.FormattingEnabled = true;
-            this.cbGroupId.Location = new System.Drawing.Point(90, 367);
-            this.cbGroupId.Name = "cbGroupId";
-            this.cbGroupId.Size = new System.Drawing.Size(224, 21);
-            this.cbGroupId.TabIndex = 7;
+            this.cmbGroup.FormattingEnabled = true;
+            this.cmbGroup.Location = new System.Drawing.Point(90, 215);
+            this.cmbGroup.Name = "cmbGroup";
+            this.cmbGroup.Size = new System.Drawing.Size(224, 21);
+            this.cmbGroup.TabIndex = 7;
             // 
             // lbGroupId
             // 
-            this.lbGroupId.Location = new System.Drawing.Point(13, 368);
+            this.lbGroupId.Location = new System.Drawing.Point(13, 216);
             this.lbGroupId.Name = "lbGroupId";
             this.lbGroupId.Size = new System.Drawing.Size(71, 20);
             this.lbGroupId.TabIndex = 8;
-            this.lbGroupId.Text = "Id grupy:";
+            this.lbGroupId.Text = "Grupa";
             // 
             // AddEditStudent
             // 
@@ -245,7 +245,7 @@ namespace StudentsDiary
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 451);
             this.Controls.Add(this.lbGroupId);
-            this.Controls.Add(this.cbGroupId);
+            this.Controls.Add(this.cmbGroup);
             this.Controls.Add(this.chbAdditionalClasses);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
@@ -320,7 +320,7 @@ namespace StudentsDiary
         #endregion
 
         private System.Windows.Forms.CheckBox chbAdditionalClasses;
-        private System.Windows.Forms.ComboBox cbGroupId;
+        private System.Windows.Forms.ComboBox cmbGroup;
         private System.Windows.Forms.Label lbGroupId;
     }
 }

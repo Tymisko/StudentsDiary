@@ -7,16 +7,20 @@ namespace StudentsDiary
 {
     public partial class AddEditStudent : Form
     {
-        private Student _student;
-        private int _studentId; 
+        private readonly List<Group> _groups;
 
-        private FileHelper<List<Student>> _fileHelper =
+        private Student _student;
+        private int _studentId;
+
+        private readonly FileHelper<List<Student>> _fileHelper =
             new FileHelper<List<Student>>(Program.FilePath);
 
         public AddEditStudent(int id = 0)
         {
             InitializeComponent();
-            LoadGroupsId();
+            InitGroupsCombobox();
+
+            _groups = GroupsHelper.GetGroups("Brak");
 
             _studentId = id;
             GetStudentData();
@@ -24,9 +28,11 @@ namespace StudentsDiary
             tbFirstName.Select();
         }
 
-        private void LoadGroupsId()
+        private void InitGroupsCombobox()
         {
-            cbGroupId.DataSource = Main.GroupsId;
+            cmbGroup.DataSource = _groups;
+            cmbGroup.DisplayMember = "Name";
+            cmbGroup.ValueMember = "Id";
         }
 
         private void GetStudentData()
@@ -57,7 +63,7 @@ namespace StudentsDiary
             tbForeignLang.Text = _student.ForeignLang;
             rtbComments.Text = _student.Comments;
             chbAdditionalClasses.Checked = _student.AdditionalClasses;
-            cbGroupId.SelectedItem = _student.GroupId;
+            cmbGroup.SelectedItem = _groups.FirstOrDefault(g => g.Id == _student.Group.Id);
         }
 
         private void BtnAccept_Click(object sender, EventArgs e)
@@ -90,7 +96,7 @@ namespace StudentsDiary
                 ForeignLang = tbForeignLang.Text,
                 Comments = rtbComments.Text,
                 AdditionalClasses = chbAdditionalClasses.Checked,
-                GroupId = (int)cbGroupId.SelectedItem,
+                Group = cmbGroup.SelectedItem as Group,
             };
 
             students.Add(student);

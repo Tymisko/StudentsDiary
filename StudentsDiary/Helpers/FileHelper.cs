@@ -5,7 +5,7 @@ namespace StudentsDiary
 {
     internal class FileHelper<T> where T : new()
     {
-        private string _filePath;
+        private readonly string _filePath;
 
         public FileHelper(string filePath)
         {
