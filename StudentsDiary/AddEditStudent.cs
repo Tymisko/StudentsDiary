@@ -8,8 +8,7 @@ namespace StudentsDiary
     public partial class AddEditStudent : Form
     {
         private Student _student;
-        private int _studentId;
-        private List<Group> _groups = new List<Group>();
+        private int _studentId; 
 
         private FileHelper<List<Student>> _fileHelper =
             new FileHelper<List<Student>>(Program.FilePath);
@@ -27,17 +26,7 @@ namespace StudentsDiary
 
         private void LoadGroupsId()
         {
-            _groups.Add(new Group(1));
-            _groups.Add(new Group(2));
-            _groups.Add(new Group(3));
-
-            var groupsId = new List<int>();
-            foreach (var group in _groups)
-            {
-                groupsId.Add(group.Id);
-            }
-
-            cbGroupId.DataSource = groupsId;
+            cbGroupId.DataSource = Main.GroupsId;
         }
 
         private void GetStudentData()

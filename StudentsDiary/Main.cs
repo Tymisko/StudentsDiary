@@ -1,6 +1,7 @@
 ﻿using StudentsDiary.Properties;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace StudentsDiary
@@ -9,6 +10,8 @@ namespace StudentsDiary
     {
         private FileHelper<List<Student>> _fileHelper = 
             new FileHelper<List<Student>>(Program.FilePath);
+
+        public static List<int> GroupsId { get; } = new List<int> {1, 2, 3};
 
         public bool IsMaximize 
         { 
@@ -25,17 +28,33 @@ namespace StudentsDiary
         public Main()
         {
             InitializeComponent();
+
+            LoadStudentsFilters();
+
             RefreshDiary();
 
             SetColumnsHeader();
 
             if (IsMaximize)
-                WindowState = FormWindowState.Maximized;
+                WindowState = FormWindowState.Maximized;           
+        }
+
+        private void LoadStudentsFilters()
+        {
+            var studentsFilters = new List<string>(GroupsId.Select(i => i.ToString())) { "Wszyscy" };
+            cbGroupFilter.DataSource = studentsFilters;
+            cbGroupFilter.SelectedIndex = studentsFilters.Count - 1;
         }
 
         private void RefreshDiary()
         {
             var students = _fileHelper.DeserializeFromFile();
+
+            // Apply filters if they were applied
+            string selectedFilter = cbGroupFilter.SelectedValue.ToString();
+            if (int.TryParse(selectedFilter, out var selectedGroupId))
+                students.RemoveAll(s => s.GroupId != selectedGroupId);                
+
             dgvDiary.DataSource = students;
         }
 
@@ -122,6 +141,11 @@ namespace StudentsDiary
                 IsMaximize = false;
 
             Settings.Default.Save();
+        }
+
+        private void cbGroupFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshDiary();
         }
     }
 }
