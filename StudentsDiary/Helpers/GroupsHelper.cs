@@ -8,9 +8,9 @@ namespace StudentsDiary
         {
             return new List<Group>
             {
-                new Group { Id = 0, Name = defaultGroup },
-                new Group { Id = 1, Name = "1a" },
-                new Group { Id = 2, Name = "1b" }
+                new Group(0, defaultGroup),
+                new Group(1, "1a"),
+                new Group(2, "1b")
             };
         }
     }
