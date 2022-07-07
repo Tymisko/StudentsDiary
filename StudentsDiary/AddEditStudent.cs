@@ -18,9 +18,9 @@ namespace StudentsDiary
         public AddEditStudent(int id = 0)
         {
             InitializeComponent();
-            InitGroupsCombobox();
-
+            
             _groups = GroupsHelper.GetGroups("Brak");
+            InitGroupsCombobox();
 
             _studentId = id;
             GetStudentData();
@@ -37,18 +37,16 @@ namespace StudentsDiary
 
         private void GetStudentData()
         {
-            if (_studentId != 0)
-            {
-                Text = "Edytowanie danych ucznia";
+            if (_studentId == 0) return;
+            Text = "Edytowanie danych ucznia";
 
-                var students = _fileHelper.DeserializeFromFile();
-                _student = students.FirstOrDefault(s => s.Id == _studentId);
+            var students = _fileHelper.DeserializeFromFile();
+            _student = students.FirstOrDefault(s => s.Id == _studentId);
 
-                if (_student == null)
-                    throw new Exception("Brak użytkownika o podanym Id");
+            if (_student == null)
+                throw new Exception("Brak użytkownika o podanym Id");
 
-                FillTextBoxes();                
-            }
+            FillTextBoxes();
         }
 
         private void FillTextBoxes()
